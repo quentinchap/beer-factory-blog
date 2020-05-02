@@ -1,0 +1,35 @@
+---
+path: "/basiques"
+date: "2020-05-02"
+auhtor: "Quentin CHAPELLE"
+title: "Les basiques"
+featuredImage: une.jpg
+tags: ["Basiques", "Apprendre", "2020"]
+excerpt: "Dans ce première article nous allons aborder les rudiments vous permettant d'aborder le monde merveilleux des brasseurs! "
+---
+
+Dans ce première article nous allons aborder les rudiments vous permettant d'aborder le monde merveilleux des brasseurs!
+
+# Les ingrédients
+
+Une bière c'est au minimum 4 éléments. De l'eau, du malt, du houblon et des levures.
+
+## Les malts
+
+Beaucoup de personnes non avertis ont tendance à penser qu'il s'agit d'une céréale particulière.
+Que nenni! il est possible de trouver des malts de blés, de seigles, de riz etc. pour faire simple il s'agit de grains que l'on met à germer qui passeront pas de multi étape pour donner un produit riche en amidon.
+
+## Les houblons
+
+Cet ingrédient n'était pas présent à l'origine. Les premières trace de ce breuvage malté remonte à -4000 avant J.C. alors que le houblons lui n'a pas été utilisé avant le XII ème siècle.
+A l'origine il était utilisé principalement pour ces vertus antiseptiques. Cependant, au fil du temps et des selections d'espèces les brasseurs et producteurs de houblons en ont fait un ingrédient aromatique à part entière.
+
+## Les levures
+
+Nous le verrons en détail dans le prochain paragraphe mais cet élément est essentiel dans le processus de fermentation. Les levures sont en fait des organismes vivants qui aime beaucoup le sucre. Elle vont en effet le consommer et produire de l'alcool et du CO2. Ce CO2 s'il est contraint dans une bouteille par exemple se dissoudra dans le liquide afin de lui donner des bulles !
+
+## L'eau
+
+To do
+
+# Le procédé
