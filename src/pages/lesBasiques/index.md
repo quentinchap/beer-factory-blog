@@ -1,10 +1,11 @@
 ---
 path: "/basiques"
 date: "2020-05-02"
-auhtor: "Quentin CHAPELLE"
+author: "Quentin CHAPELLE"
 title: "Les basiques"
-featuredImage: une.jpg
+featuredImage: ./une.jpg
 tags: ["Basiques", "Apprendre", "2020"]
+draft: true
 excerpt: "Dans ce première article nous allons aborder les rudiments vous permettant d'aborder le monde merveilleux des brasseurs! "
 ---
 
