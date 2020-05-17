@@ -16,6 +16,9 @@ const useStyles = makeStyles(theme => ({
   mainGrid: {
     marginTop: theme.spacing(3),
   },
+  blogPost: {
+    textAlign: "justify",
+  },
 }))
 
 const sections = [
@@ -94,7 +97,7 @@ const Template = ({ data, pathContext }) => {
             <Typography
               variant="subtitle1"
               paragraph
-              className="blogpost"
+              className={classes.blogPost}
               dangerouslySetInnerHTML={{ __html: html }}
             />
             {/*<div>
