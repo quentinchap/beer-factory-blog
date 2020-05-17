@@ -5,12 +5,12 @@ module.exports = {
     description: `Un blog qui parle du monde brassicole!`,
     author: `Quentin CHAPELLE`,
   },
-  plugins: [
+  plugins: [    
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // The property ID; the tracking code won't be generated without it
-        trackingId: "G-K473G6CZKQ",
+        trackingId: "UA-35035484-6",
         // Defines where to place the tracking script - `true` in the head and `false` in the body
         head: true,
         // Setting this parameter is optional
