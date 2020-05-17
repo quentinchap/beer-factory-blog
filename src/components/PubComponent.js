@@ -4,6 +4,9 @@ import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core/styles"
 import map from "lodash/map"
 import axios from "axios"
+import CardActionArea from "@material-ui/core/CardActionArea"
+import CardMedia from "@material-ui/core/CardMedia"
+import CardContent from "@material-ui/core/CardContent"
 
 const _ = { map }
 
@@ -29,25 +32,27 @@ const useStyles = makeStyles(() => ({
     fontWeight: 400,
     padding: 10,
     background: "#484848",
-    minHeight: 68,
-    maxWidth: 110,
-    width: 110,
+    maxWidth: 150,
+    width: 150,
+    height: 100,
     color: "#ffbd69",
   },
   pubDisclamer: {
     color: "#ffbd69",
     fontWeight: 400,
+    textAlign: "center"
   },
   pubContainer: {
     margin: 7,
-    minWidth: 110,
-    width: 110,
+    minWidth: 150,
+    width: 150,
   },
   pubLink: {
     display: "flex",
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
-    border: "1px solid #484848",
+    height: "100%",
+    color: "black",
     flexDirection: "column",
     textDecoration: "none",
     alignItems: "center",
@@ -191,6 +196,9 @@ const PubComponent = memo(({ title, tags, numberItem = 5 }) => {
       <Typography component="h5" variant="h5" className={classes.title}>
         {state.title}
       </Typography>
+      <Typography component="p" className={classes.pubDisclamer}>
+        Publicités
+      </Typography>
       <div className={classes.linkContainer}>
         {_.map(state.items, (item, i) => {
           if (i < numberItem) {
@@ -199,9 +207,6 @@ const PubComponent = memo(({ title, tags, numberItem = 5 }) => {
           return
         })}
       </div>
-      <Typography component="p" className={classes.pubDisclamer}>
-        Publicités
-      </Typography>
     </div>
   )
 })
@@ -210,6 +215,32 @@ const ItemComponent = ({ item }) => {
   const classes = useStyles()
 
   return (
+    <Card className={classes.pubContainer}>
+      <a
+        href={item.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={classes.pubLink}
+      >
+        <CardActionArea>
+          <CardMedia
+            component="img"
+            alt="Contemplative Reptile"
+            height="140"
+            image={item.picture}
+            title={item.label}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="body1" component="p">
+              {item.label}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </a>
+    </Card>
+  )
+
+  /*return (
     <div className={classes.pubContainer}>
       <a
         href={item.link}
@@ -223,7 +254,7 @@ const ItemComponent = ({ item }) => {
         </Typography>
       </a>
     </div>
-  )
+  )*/
 }
 
 export default PubComponent

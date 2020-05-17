@@ -125,7 +125,17 @@ const Template = ({ data, pathContext }) => {
                 )}
               </p>
                 </div>*/}
+          </Card>
+          <div>
             <PubComponent tags={pubs} numberItem={4} />
+          </div>
+          <Card
+            style={{
+              margin: "20px auto 20px auto",
+              padding: 20,
+              maxWidth: 800,
+            }}
+          >
             <DiscussionEmbed {...disqusConfig} />
           </Card>
         </div>
