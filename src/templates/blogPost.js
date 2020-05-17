@@ -10,7 +10,7 @@ import Footer from "../components/Footer"
 import Card from "@material-ui/core/Card"
 import "../layout.css"
 import PubComponent from "../components/PubComponent"
-import SEO from '../components/seo';
+import SEO from "../components/seo"
 
 const useStyles = makeStyles(theme => ({
   mainGrid: {
@@ -38,6 +38,7 @@ const Template = ({ data, pathContext }) => {
 
   const path = post.frontmatter.path
   const title = post.frontmatter.title
+  const excerpt = post.frontmatter.excerpt
   const date = post.frontmatter.date
   const author = post.frontmatter.author
   const pubs = post.frontmatter.pubs
@@ -59,7 +60,7 @@ const Template = ({ data, pathContext }) => {
 
   return (
     <React.Fragment>
-      <SEO title="title" />
+      <SEO title={title} description={excerpt} author={author} />
       <CssBaseline />
       <Header title="Blog" sections={sections} />
       <main style={{ paddingTop: 64 }}>
