@@ -10,6 +10,7 @@ import Footer from "../components/Footer"
 import Card from "@material-ui/core/Card"
 import "../layout.css"
 import PubComponent from "../components/PubComponent"
+import SEO from '../components/seo';
 
 const useStyles = makeStyles(theme => ({
   mainGrid: {
@@ -42,7 +43,7 @@ const Template = ({ data, pathContext }) => {
   const pubs = post.frontmatter.pubs
   const html = post.html
   const featuredImage = post.frontmatter.featuredImage
-  console.log(pubs)
+
   const disqusConfig = {
     shortname: "beerfactory",
     config: { identifier: path, title },
@@ -58,6 +59,7 @@ const Template = ({ data, pathContext }) => {
 
   return (
     <React.Fragment>
+      <SEO title="title" />
       <CssBaseline />
       <Header title="Blog" sections={sections} />
       <main style={{ paddingTop: 64 }}>
