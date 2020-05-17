@@ -1,6 +1,6 @@
 ---
 path: "/premier-post"
-date: "2020-05-17"
+date: "2020-05-16"
 title: "Bienvenue sur Beer Factory"
 author: "Quentin C."
 featuredImage: ./une.jpg

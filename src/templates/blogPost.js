@@ -69,8 +69,8 @@ const Template = ({ data, pathContext }) => {
       <main style={{ paddingTop: 64 }}>
         <div>
           {featuredImgFluid ? (
-            <div style={{ height: 200 }}>
-              <Img fluid={featuredImgFluid} style={{ height: 200 }} />
+            <div style={{ height: 400 }}>
+              <Img fluid={featuredImgFluid} style={{ height: 400 }} />
             </div>
           ) : (
             ""

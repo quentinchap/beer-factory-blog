@@ -1,12 +1,12 @@
 ---
 path: "/blancheMyrtille"
-date: "2020-05-18"
+date: "2020-05-17"
 title: "Blanche Myrtilles"
 author: "Quentin C."
-featuredImage: "./myrtillesBlanche.png"
+featuredImage: "./IMG_20200517_175844.jpg"
 tags: ["Recettes", "2020"]
 draft: false
-excerpt: "Recette de blanche à la myrtille"
+excerpt: "Recette de bière blanche aux myrtilles sauvages"
 ---
 
 Le brassage est un de mes hobbies depuis quelques années. Je suis donc régulièrement amené à concevoir de nouveaux breuvages. Je vous propose de partager avec vous quelques une de mes recettes !
