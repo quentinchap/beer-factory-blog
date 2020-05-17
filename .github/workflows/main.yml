@@ -29,9 +29,6 @@ jobs:
           ${{ runner.os }}-build-${{ env.cache-name }}-
           ${{ runner.os }}-build-
           ${{ runner.os }}-
-    - uses: fregante/setup-git-token@v1
-      with:
-        token: ${{ secrets.GIT_PAT }}
     - name: Use Node.JS ${{ matrix.node-version }}
       uses: actions/setup-node@v1 
       with:
