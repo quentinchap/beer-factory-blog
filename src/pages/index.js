@@ -56,6 +56,7 @@ export const query = graphql`
             date(formatString: "DD/MM/YYYYs")
             path
             tags
+            pubs
             excerpt
           }
         }

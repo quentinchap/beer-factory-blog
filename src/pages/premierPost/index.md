@@ -1,33 +1,34 @@
 ---
 path: "/premier-post"
-date: "2020-05-01"
+date: "2020-05-17"
 title: "Bienvenue sur Beer Factory"
-author: "Quentin CHAPELLE"
+author: "Quentin C."
 featuredImage: ./une.jpg
 tags: ["Divers", "2020"]
+pubs: ["concassage"]
 excerpt: "Bienvenue sur Beer Factory votre assistant brasseur ! Beer factory est née ..."
 ---
 
 ### votre assistant brasseur !
 
 Pour ce premier billet faisons connaissance :)
-Je m'appel Quentin, je suis le créateur de Beer factory qui est née il y a environs 3 ans. Au départ ce n'était qu'une petite application mobile développé dans un coin afin d'assister mes première expériences brassicoles.
 
-Le but était simplement de simplifier mon processus de brassage tout en développant mes connaissances. J'ai pris ça comme un jeu permettant de mettre en pratique et de développer mes connaissances en développement tout en développant ma passion pour le monde brassicole.
+Je m'appel Quentin, je suis le créateur de Beer Factory. Ce projet est née il y a environ 3 ans. Au départ, ce n'était qu'une petite application mobile développée dans mon coin.
 
-Après quelque temps l'utilisation de l'application devin systématique pendant mes séance de brassage. Si elle m'était utile peut-être pourrait-elle l'être pour d'autre! Partant de ce constat je choisi de la déployer sur le play store. L'application est aujourd'hui plutôt bien utilisé ce qui m'a motivé à continuer et à passer à l'étape suivante :)
+Le but ? Simplifier mon processus de brassage et m'assister dans mes premières expériences brassicoles. Se fût donc en prenant ceci comme un jeu, permettant de mettre en pratique mes nouvelles connaissances et ma passion pour le monde brassicole que l'application est née.
+
+Après quelques temps, l'utilisation de Beer factory devint systématique pendant mes séances de brassages. Peut-être pourrait-elle être utile à d'autre! Partant de ce constat, je choisis de la déployer sur le play store. L'application est aujourd'hui utilisée par des centaines de personnes ce qui m'a motivé à continuer et à passer à l'étape suivante :)
 
 ### Vers des outils plus évolués
 
-Au fil du temps mes activités de brassage ont évolué et se sont professionnalisées grâce au lancement de Brasse band, une brasserie associative que nous avons fondé avec d'autre brasseurs amateurs Auvergnats !
+Au fil du temps mes activités brassicoles ont évolué grâce au lancement de Brasse band, une brasserie associative fondée avec un groupe de brasseurs amateurs Auvergnats !
 
-Pour l'occasion Beer Factory c'est décliné en application web et professionnalisée avec des outils de gestion de commande, eShop et autres outils de gestions.
+Pour l'occasion Beer Factory c'est décliné en application web et a intégré des outils de gestion de commandes, eShop, etc.
 
-Les amateurs ne ont pas été oublié pour autant ! en effet en même temps que le lancement de nouveaux outils de calcul un éditeur de recette et de nombreuses nouveautés devraient bientôt faire leurs apparitions! Aujourd'hui vous découvrez l'une d'entre elle, ce blog !
+Les amateurs n'ont pas été oubliés pour autant ! Nouveaux outils de calcul, blog et un éditeur de recette sont désormais disponibles ! Et ce n'est pas finis, de nombreuses nouveautés devraient bientôt faire leurs apparitions !
 
 ### Conclusion
 
-Aujourd'hui par ce billet c'est une nouvelle étape qui est lancé, elle s'inscrit dans la volonté de partage et d'assistance ancré dans l'ADN de Beer Factory! Nous y verrons les rudiments du monde brassicole, des articles pour apprendre à utiliser les fonctionnalités les plus complexes du site mais aussi des retours d'expériences, des astuces, des test...
+Aujourd'hui par ce billet c'est une nouvelle étape qui est lancée, elle s'inscrit dans la volonté de partage et d'assistance ancré dans l'ADN de Beer Factory! Nous y verrons les rudiments du monde brassicole, des articles pour apprendre à utiliser les fonctionnalités les plus complexes du site et partager des retours d'expériences, astuces, tests...
 
-J'espère que ce programme vous met l'eau à la bouche! N'hésitez pas à laisser une petit commentaire pour vous présentez ou si vous avez simplement envi de partager!
-À bientôt sur Beer Factory ;)
+J'espère que ce programme vous met l'eau à la bouche ! N'hésitez pas à laisser un commentaire pour vous présenter ou simplement si vous avez envie ! À bientôt sur Beer Factory ;)

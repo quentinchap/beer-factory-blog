@@ -1,8 +1,8 @@
 ---
 path: '/blancheMyrtille'
-date: '2020-05-02'
+date: '2020-05-15'
 title: 'Blanche Myrtilles'
-author: 'Quentin CHAPELLE'
+author: 'Quentin C.'
 featuredImage: "./une.jpg"
 tags: ['Recettes', '2020']
 draft: true
@@ -16,7 +16,7 @@ Pour cette première nous allons mijoter une blanche aux myrtilles sauvages :)
 # Les ingrédients
 Commençons par les ingrédients. Dans ce billet vous aurez la liste des ingrédients nécessaire pour produire environs 23 Litre.
 
- Vous pouvez à tout moment retrouver et adapter cette recette sur [Beer Factory](http://www.siteduzero.com).
+ Vous pouvez à tout moment retrouver et adapter cette recette sur [Beer Factory](https://mybeerfactory.fr/brewery/recipes/5eaf3255c00ca708f38d7c5f).
 
 ## Les grains
 | Nom | quantités | lien |

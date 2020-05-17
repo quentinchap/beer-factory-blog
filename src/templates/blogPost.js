@@ -8,7 +8,8 @@ import Typography from "@material-ui/core/Typography"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import Card from "@material-ui/core/Card"
-import "../layout.css";
+import "../layout.css"
+import PubComponent from "../components/PubComponent"
 
 const useStyles = makeStyles(theme => ({
   mainGrid: {
@@ -38,9 +39,10 @@ const Template = ({ data, pathContext }) => {
   const title = post.frontmatter.title
   const date = post.frontmatter.date
   const author = post.frontmatter.author
+  const pubs = post.frontmatter.pubs
   const html = post.html
   const featuredImage = post.frontmatter.featuredImage
-
+  console.log(pubs)
   const disqusConfig = {
     shortname: "beerfactory",
     config: { identifier: path, title },
@@ -116,14 +118,15 @@ const Template = ({ data, pathContext }) => {
                 )}
               </p>
                 </div>*/}
+            <PubComponent tags={pubs} numberItem={4} />
             <DiscussionEmbed {...disqusConfig} />
           </Card>
         </div>
       </main>
 
       <Footer
-        title="Footer"
-        description="Something here to give the footer a purpose!"
+        title="Beer Factory"
+        description="Blog & application pour les brasseurs par un brasseur."
       />
     </React.Fragment>
   )
@@ -147,6 +150,7 @@ export const postQuery = graphql`
         date(formatString: "DD/MM/YYYYs")
         path
         tags
+        pubs
         excerpt
       }
     }
