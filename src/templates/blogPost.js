@@ -96,6 +96,7 @@ const Template = ({ data, pathContext }) => {
 
             <Typography
               variant="subtitle1"
+              component="div"
               paragraph
               className={classes.blogPost}
               dangerouslySetInnerHTML={{ __html: html }}
