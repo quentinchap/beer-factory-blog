@@ -174,7 +174,8 @@ const PubComponent = memo(({ title, tags, numberItem = 5 }) => {
       }
       //let res = await axios.post("https://api.mybeerfactory.fr/api/v1.1/pubs", {
       let res = await axios.post(
-        "http://localhost:8080/api/v1.1/pubs",
+        "https://api.mybeerfactory.fr/api/v1.1/pubs",
+        //"http://localhost:8080/api/v1.1/pubs",
         config,
         {
           numberOfItems: numberItem,
