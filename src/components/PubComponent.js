@@ -40,7 +40,7 @@ const useStyles = makeStyles(() => ({
   pubDisclamer: {
     color: "#ffbd69",
     fontWeight: 400,
-    textAlign: "center"
+    textAlign: "center",
   },
   pubContainer: {
     margin: 7,
@@ -169,10 +169,18 @@ const PubComponent = memo(({ title, tags, numberItem = 5 }) => {
 
   useEffect(() => {
     async function fetchData() {
-      let res = await axios.post("https://api.mybeerfactory.fr/api/v1.1/pubs", {
-        numberOfItems: numberItem,
-        tags: [...(tags || [])],
-      })
+      let config = {
+        headers: { "Access-Control-Allow-Origin": "*" },
+      }
+      //let res = await axios.post("https://api.mybeerfactory.fr/api/v1.1/pubs", {
+      let res = await axios.post(
+        "http://localhost:8080/api/v1.1/pubs",
+        config,
+        {
+          numberOfItems: numberItem,
+          tags: [...(tags || [])],
+        }
+      )
       setState({ items: res.data })
     }
 
