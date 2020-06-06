@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-
 import Layout from "../components/layout"
 import { ThemeProvider, createMuiTheme } from "@material-ui/core"
 
@@ -25,7 +24,7 @@ const theme = createMuiTheme({
 })
 
 const IndexPage = ({ data }) => {
-  const { edges } = data.allMarkdownRemark
+  const { edges } = data.allMdx
 
   return (
     <ThemeProvider theme={theme}>
@@ -36,8 +35,8 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   query HomePageQuery {
-    allMarkdownRemark(
-      filter: { fields: { draft: { eq: false } } }
+    allMdx(
+      filter: { frontmatter: { draft: { eq: false } } }
       sort: { order: DESC, fields: frontmatter___date }
     ) {
       totalCount
@@ -57,6 +56,7 @@ export const query = graphql`
             path
             tags
             pubs
+            draft
             excerpt
           }
         }

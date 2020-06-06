@@ -14,20 +14,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const sections = [
-  { title: "Technology", url: "#" },
-  { title: "Design", url: "#" },
-  { title: "Culture", url: "#" },
-  { title: "Business", url: "#" },
-  { title: "Politics", url: "#" },
-  { title: "Opinion", url: "#" },
-  { title: "Science", url: "#" },
-  { title: "Health", url: "#" },
-  { title: "Style", url: "#" },
-  { title: "Travel", url: "#" },
-]
-
-export default function Blog({ edges }) {
+export default function Layout({ edges }) {
   const classes = useStyles()
   let mainPost = {}
   let posts = []
@@ -40,7 +27,7 @@ export default function Blog({ edges }) {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Header title="Blog" sections={sections} />
+      <Header title="Blog" />
       <Container maxWidth="lg">
         <main style={{ paddingTop: 80 }}>
           <MainFeaturedPost post={mainPost} />

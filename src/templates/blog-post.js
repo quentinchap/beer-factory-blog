@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import { DiscussionEmbed } from "disqus-react"
 import { makeStyles } from "@material-ui/core/styles"
@@ -11,6 +11,8 @@ import Card from "@material-ui/core/Card"
 import "../layout.css"
 import PubComponent from "../components/PubComponent"
 import SEO from "../components/seo"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+import { MDXProvider } from "@mdx-js/react"
 
 const useStyles = makeStyles(theme => ({
   mainGrid: {
@@ -21,23 +23,11 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const sections = [
-  { title: "Technology", url: "#" },
-  { title: "Design", url: "#" },
-  { title: "Culture", url: "#" },
-  { title: "Business", url: "#" },
-  { title: "Politics", url: "#" },
-  { title: "Opinion", url: "#" },
-  { title: "Science", url: "#" },
-  { title: "Health", url: "#" },
-  { title: "Style", url: "#" },
-  { title: "Travel", url: "#" },
-]
-
-const Template = ({ data, pathContext }) => {
+const Template = ({ children,data, ...props }) => {
   const classes = useStyles()
 
-  let post = data.markdownRemark
+  const post = props.pageContext
+  console.log(data)
 
   const path = post.frontmatter.path
   const title = post.frontmatter.title
@@ -45,7 +35,6 @@ const Template = ({ data, pathContext }) => {
   const date = post.frontmatter.date
   const author = post.frontmatter.author
   const pubs = post.frontmatter.pubs
-  const html = post.html
   const featuredImage = post.frontmatter.featuredImage
 
   const disqusConfig = {
@@ -54,18 +43,79 @@ const Template = ({ data, pathContext }) => {
   }
 
   let featuredImgFluid = ""
-  if (featuredImage) {
+  if (featuredImage && featuredImage.childImageSharp) {
     featuredImgFluid = featuredImage.childImageSharp.fluid
   }
+  console.log(featuredImgFluid, featuredImage)
 
-  const { next, prev } = pathContext
-  console.log(next)
+  //console.log(featuredImgFluid, props)
+
+  //const { next, prev } = pathContext
+  //console.log(next)
 
   return (
-    <React.Fragment>
+    <MDXProvider
+      components={{
+        h1: props => (
+          <Typography
+            variant="h1"
+            component="h2"
+            {...props}
+            style={{
+              marginTop: 60,
+              marginBottom: 40,
+              fontWeight: 100,
+              color: "#4a4a4a",
+              fontSize: "4rem",
+              borderBottom: "solid #ffbe58",
+            }}
+          />
+        ),
+        h2: props => (
+          <Typography
+            variant="h2"
+            component="h2"
+            {...props}
+            style={{
+              marginBottom: 20,
+              fontSize: "3rem",
+              color: "#ffbe58",
+              fontWeight: 500,
+            }}
+          />
+        ),
+        h3: props => (
+          <Typography
+            variant="h3"
+            component="h3"
+            {...props}
+            style={{ marginBottom: 20 }}
+          />
+        ),
+        p: props => (
+          <Typography
+            variant="body1"
+            component="p"
+            {...props}
+            style={{ marginBottom: 20 }}
+          />
+        ),
+        li: props => (
+          <Typography
+            variant="body1"
+            component="li"
+            {...props}
+            style={{ marginBottom: 5 }}
+          />
+        ),
+        a: props => (
+          <a {...props} style={{ color: "#ca7b00", textDecoration: "none" }} />
+        ),
+      }}
+    >
       <SEO title={title} description={excerpt} author={author} />
       <CssBaseline />
-      <Header title="Blog" sections={sections} />
+      <Header title="Blog" />
       <main style={{ paddingTop: 64 }}>
         <div>
           {featuredImgFluid ? (
@@ -93,38 +143,32 @@ const Template = ({ data, pathContext }) => {
             <Typography variant="subtitle1" color="textSecondary">
               {author} - <em>{date}</em>
             </Typography>
+            {children}
 
-            <Typography
-              variant="subtitle1"
-              component="div"
-              paragraph
-              className={classes.blogPost}
-              dangerouslySetInnerHTML={{ __html: html }}
-            />
             {/*<div>
-              <p>
-                {prev && (
-                  <Link to={prev.frontmatter.path}>
-                    {prev.frontmatter.title}{" "}
-                    <span role="img" aria-label="point-left">
-                      👈{" "}
-                    </span>
-                    Previous
-                  </Link>
-                )}
-              </p>
-              <p>
-                {next && (
-                  <Link to={next.frontmatter.path}>
-                    Next{" "}
-                    <span role="img" aria-label="point-right">
-                      👉
-                    </span>
-                    {next.frontmatter.title}
-                  </Link>
-                )}
-              </p>
-                </div>*/}
+                <p>
+                  {prev && (
+                    <Link to={prev.frontmatter.path}>
+                      {prev.frontmatter.title}{" "}
+                      <span role="img" aria-label="point-left">
+                        👈{" "}
+                      </span>
+                      Previous
+                    </Link>
+                  )}
+                </p>
+                <p>
+                  {next && (
+                    <Link to={next.frontmatter.path}>
+                      Next{" "}
+                      <span role="img" aria-label="point-right">
+                        👉
+                      </span>
+                      {next.frontmatter.title}
+                    </Link>
+                  )}
+                </p>
+                  </div>*/}
           </Card>
           <div>
             <PubComponent tags={pubs} numberItem={4} />
@@ -145,14 +189,15 @@ const Template = ({ data, pathContext }) => {
         title="Beer Factory"
         description="Blog & application pour les brasseurs par un brasseur."
       />
-    </React.Fragment>
+    </MDXProvider>
   )
 }
 
 export const postQuery = graphql`
-  query($pathSlug: String!) {
-    markdownRemark(frontmatter: { path: { eq: $pathSlug } }) {
-      html
+  query MDXQuery($id: String) {
+    mdx(id: { eq: $id }) {
+      id
+      body
       frontmatter {
         title
         author

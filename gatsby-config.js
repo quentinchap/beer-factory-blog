@@ -1,3 +1,5 @@
+const path = require("path")
+
 module.exports = {
   siteMetadata: {
     siteUrl: "https://blog.mybeerfactory.fr",
@@ -5,7 +7,34 @@ module.exports = {
     description: `Un blog qui parle du monde brassicole!`,
     author: `Quentin CHAPELLE`,
   },
-  plugins: [    
+  plugins: [
+    "gatsby-plugin-mdx-frontmatter",
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-remark-images`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+        defaultLayouts: {
+          posts: path.resolve("./src/components/layout.js"),
+          default: path.resolve("./src/templates/blog-post.js"),
+        },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 500,
+            },
+          },
+        ],
+      },
+    },
+
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-react-helmet`,
+
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -17,7 +46,6 @@ module.exports = {
         anonymize: true,
       },
     },
-    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-material-ui`,
       options: {
@@ -26,9 +54,7 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-styled-components`,
-    "gatsby-plugin-draft",
-    `gatsby-plugin-react-helmet`,
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -36,8 +62,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -50,7 +75,6 @@ module.exports = {
         icon: `src/images/logo512.png`, // This path is relative to the root of the site.
       },
     },
-    "gatsby-transformer-remark",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -67,26 +91,6 @@ module.exports = {
           utc: false, // boolean, defaults to false - output time as UTC or not, following date-and-time API
         },
         locale: "fr", // string, defaults to null, which date-and-time defaults as "en" - whether to localize the date or not, can use any available date-and-time localization
-      },
-    },
-    `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 1048,
-            },
-          },
-        ],
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/pages`,
       },
     },
 
